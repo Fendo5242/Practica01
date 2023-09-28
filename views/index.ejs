@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar alumno</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+          background-image: url('https://i.pinimg.com/originals/5d/c3/50/5dc350fb8ef7a2c3dbdb1e3d4bc44083.gif');
+        }
+        #letra{
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <center><h1 class="mb-4" id="letra">Agregar alumno</h1></center>
+        <form method="POST" action="/agregar">
+            <div class="mb-3">
+                <label for="nombres" class="form-label" id="letra">Nombres:</label>
+                <input type="text" class="form-control" name="nombres" required>
+            </div>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label" id="letra">Apellidos:</label>
+                <input type="text" class="form-control" name="apellidos" required>
+            </div>
+            <div class="mb-3">
+                <label for="ciclo" class="form-label" id="letra">Ciclo:</label>
+                <input type="number" class="form-control" name="ciclo" required>
+            </div>
+            <div class="mb-3">
+                <label for="seccion" class="form-label" id="letra">Sección:</label>
+                <input type="text" class="form-control" name="seccion" required>
+            </div>
+            <center><button type="submit" class="btn btn-primary">Agregar</button></center>
+        </form>
+    </div>
+
+</html>

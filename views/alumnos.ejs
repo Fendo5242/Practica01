@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Listado de alumnos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+          background-image: url('https://i.pinimg.com/originals/5d/c3/50/5dc350fb8ef7a2c3dbdb1e3d4bc44083.gif');
+        }
+        #letra{
+            color: rgb(255, 255, 255);
+        }
+        #color{
+            background-color: rgb(255, 174, 0);
+        }
+        #color2{
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><h1 class="mt-5 mb-4" id="letra">Listar alumnos</h1></center>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th id="color">Nombres</th>
+                    <th id="color">Apellidos</th>
+                    <th id="color">Ciclo</th>
+                    <th id="color">Sección</th>
+                    <th id="color">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% alumnos.forEach(alumno => { %>
+                    <tr>
+                        <td id="color2"><%= alumno.nombres %></td>
+                        <td id="color2"><%= alumno.apellidos %></td>
+                        <td id="color2"><%= alumno.ciclo %></td>
+                        <td id="color2"><%= alumno.seccion %></td>
+                        <td id="color2">
+                            <form method="POST" action="/eliminar/<%= alumno._id %>">
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <center><a href="/" class="btn btn-primary">Volver al Registro</a></center>
+    </div>
+</body>
+</html>
